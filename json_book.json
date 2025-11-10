@@ -1,0 +1,20 @@
+[
+    {
+        "title": "potter",
+        "author": "j.k.rowling",
+        "ISBN": 12345,
+        "is_availabale": true
+    },
+    {
+        "title": "chaim",
+        "author": "asher",
+        "ISBN": 12345,
+        "is_availabale": true
+    },
+    {
+        "title": "ring",
+        "author": "guy guy",
+        "ISBN": 12345,
+        "is_availabale": true
+    }
+]
