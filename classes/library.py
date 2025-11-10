@@ -19,7 +19,7 @@ class Library:
                     if j.ISBN == book_isbn and j.is_availabale:
                         j.is_availabale = False
                         i.borrowed_books.append(j)
-                        return f'the book: {j.title} is borrowed  '
+                        return f'the book: {j.title} is borrowed'
                     else:
                         return "the book doesn't exist! "
             return "user doesn't exist!"
@@ -28,7 +28,7 @@ class Library:
         for i in self.list_of_users:
             if i.id == user_id:
                 for j in self.list_of_books:
-                    if j.ISBN == book_isbn and j.is_availabale == False:
+                    if j.ISBN == book_isbn and not j.is_availabale:
                         i.borrowed_books.reamove(j)
                         return f'the book: {j.title} is return'
                     else:
@@ -36,7 +36,10 @@ class Library:
             return "user doesn't exist!"
         
     def list_available_books(self):
-        pass
+        return [str(i) for i in self.list_of_books if i.is_availabale]
 
     def search_book(self, title):
-        pass
+        for i in self.list_of_books:
+            if i.title == title:
+                return i.title
+        return "not found!"
