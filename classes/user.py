@@ -6,3 +6,6 @@ class User:
         self.name = name
         self.id = id
         self.borrowed_books = borrowed_books
+    
+    def __str__(self):
+        return f'name: {self.name}, id: {self.id}, borrowed_books: {[str(book) for book in self.borrowed_books]}'
