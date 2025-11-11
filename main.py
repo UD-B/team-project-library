@@ -1,7 +1,7 @@
 from classes.book import Book
 from classes.library import Library
 from classes.user import User
-import manager
+import file_handling
 
 
 
@@ -25,5 +25,5 @@ print(library1.list_available_books())
 search_book = library1.search_book("potter")
 print(search_book)
 
-manager1 = manager.FileHandling()
+manager1 = file_handling.FileHandling()
 manager1.json_book(library1) 
