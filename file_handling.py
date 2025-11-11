@@ -23,7 +23,7 @@ class FileHandling:
 
     def json_book(self, library_atribute: list[object]):
         with open("json_book.json", "w") as f:
-            json.dump(self.serialize(library_atribute), f, indent=4)
+            json.dump(library_atribute, f, indent=4)
 
 
 

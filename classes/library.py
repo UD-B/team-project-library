@@ -1,6 +1,9 @@
 # from .book import Book
 # from .user import User
 
+from ast import Break
+
+
 class Library:
     def __init__(self):
         self.list_of_books = []
@@ -19,10 +22,13 @@ class Library:
                     if j.ISBN == book_isbn and j.is_availabale:
                         j.is_availabale = False
                         i.borrowed_books.append(j)
-                        return f'the book: {j.title} is borrowed'
+                        print(f'the book: {j.title} is borrowed')
+                        return
                     else:
-                        return "the book doesn't exist! "
-            return "user doesn't exist!"
+                        print("the book doesn't exist! ")
+                        return
+            print("user doesn't exist!")
+            return
 
     def return_book(self, user_id, book_isbn):
         for i in self.list_of_users:
@@ -30,10 +36,13 @@ class Library:
                 for j in self.list_of_books:
                     if j.ISBN == book_isbn and not j.is_availabale:
                         i.borrowed_books.reamove(j)
-                        return f'the book: {j.title} is return'
+                        print(f'the book: {j.title} is return')
+                        return
                     else:
-                        return "the book doesn't exist! "    
-            return "user doesn't exist!"
+                        print("the book doesn't exist! ")
+                        return    
+            print("user doesn't exist!")
+            return
         
     def list_available_books(self):
         return [str(i) for i in self.list_of_books if i.is_availabale]
