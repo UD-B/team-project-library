@@ -6,10 +6,13 @@ class FileHandling:
         pass
 
     def serialize(self, object_list: list[object]):
-        serialized = (obj.__dict__ for obj in object_list)
+        serialized = [obj.__dict__ for obj in object_list]
+        print(serialized)
+        return serialized
 
     def json_book(self, library_atribute: list[object]):
-        with open("books.json", "")
+        with open("books.json", "w") as file:
+            json.dump(self.serialize(library_atribute), file)
 
 
 
@@ -23,4 +26,12 @@ class FileHandling:
     # def user_to_json(self, library):
     #     with open("users.json", "w") as file:
     #         file.write(library.list_of_users)
+
+
+
+
+
+
+
+
         
