@@ -4,7 +4,7 @@ class Book:
     def __init__(self, title, author, is_availabale =True):
         self.title = title
         self.author = author
-        self.ISBN = uuid.uuid4()
+        self.ISBN = 12345
         self.is_availabale = is_availabale
         
     def __str__(self):

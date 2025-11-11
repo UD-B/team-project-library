@@ -1,21 +1,29 @@
 from classes.book import Book
 from classes.library import Library
 from classes.user import User
-# from manager import FileHandling
-
-book1 = Book("potter", "j.k.rowling")
-book2 = Book("chaim", "asher")
-
-user1 = User("shay", 208795658,[])
-user2 = User("yishay", 208795333,[])
+from file_handling import FileHandling
 
 
-library = Library()
-library.add_book(book1)
-library.add_user(user1)
 
-# file1 = FileHandling()
-# file1.json_book(library.list_of_books)
+arr_books = [Book("potter", "j.k.rowling"), Book("chaim", "asher"), Book("ring", "guy guy")]
+arr_users = [User("shay", 208795658,[]), User("yishay", 208795333,[]), User("zeava", 2087953,[])]
 
-print(library.list_of_books[0].author)
-# print(a)
+
+library1 = Library()
+
+for book in arr_books:
+    library1.add_book(book)
+
+for user in arr_users:
+    library1.add_user(user)
+
+print(library1.borrow_book(208795658, 587658767))
+# print([str(i) for i in arr_books]) 
+
+print(library1.list_available_books())
+
+search_book = library1.search_book("potter")
+print(search_book)
+
+manager1 = manager.FileHandling()
+manager1.json_book(library1) 
