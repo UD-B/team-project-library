@@ -20,14 +20,19 @@ class FileHandling:
                          }
             data.append(dict_book)
         return data
+    
+    def serialize(self, libary: list[Library]):
+        data = []
+        for i in libary.list_of_users:
+            dict_user = {"name" : i.name,
+                         "id" : i.id,
+                         "borrowed books" : i.borrowed_books
+                         }
+            data.append(dict_user)
+        return data
 
     def json_book(self, library_atribute: list[object]):
         with open("json_book.json", "w") as f:
             json.dump(library_atribute, f, indent=4)
-
-
-
-
-
 
 
