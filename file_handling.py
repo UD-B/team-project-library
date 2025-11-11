@@ -10,7 +10,7 @@ class FileHandling:
     def __init__(self):
         pass
 
-    def serialize(self, libary: list[Library]):
+    def serialize_book(self, libary: list[Library]):
         data = []
         for i in libary.list_of_books:
             dict_book = {"title" : i.title,
@@ -21,7 +21,7 @@ class FileHandling:
             data.append(dict_book)
         return data
     
-    def serialize(self, libary: list[Library]):
+    def serialize_user(self, libary: list[Library]):
         data = []
         for i in libary.list_of_users:
             dict_user = {"name" : i.name,
