@@ -27,3 +27,7 @@ print(search_book)
 
 manager1 = file_handling.FileHandling()
 manager1.json_book(library1) 
+choice = input("")
+if choice == "4":
+    book_name = input("whats the name of the book you want to return: ")
+if book_name in library1.list_
