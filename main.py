@@ -11,7 +11,7 @@ library1 = Library()
 
 choice = None
 while choice != "7":
-    print("1. Add Book\n2. Add User\n3. Borrow Book\n7. Save & Exit: ")
+    print("1. Add Book\n2. Add User\n3. Borrow Book\n4. Return Book\n5. Show avaliable Bookss\n6. Search Book\n7. Save & Exit: ")
     choice = input("enter your choice: ")
     
     if choice  == "1":
@@ -51,6 +51,6 @@ while choice != "7":
         print("Invalid choice, try again.")
 
 manager1 = file_handling.FileHandling()
-serialize_list_books = manager1.serialize(library1)
+serialize_list_books = manager1.serialize_book(library1)
 manager1.json_book(serialize_list_books) 
 
