@@ -1,15 +1,29 @@
+from datetime import date
 import json
-import classes.library
+from os import name
+from turtle import done
+from classes.book import Book
+from classes.library import Library
+from classes.user import User
 
 class FileHandling:
     def __init__(self):
         pass
 
-    def serialize(self, object_list: list[object]):
-        serialized = (obj.__dict__ for obj in object_list)
+    def serialize(self, libary: list[Library]):
+        data = []
+        for i in libary.list_of_books:
+            dict_book = {"title" : i.title,
+                         "author" : i.author,
+                         "ISBN" : i.ISBN,
+                         "is_availabale" : i.is_availabale
+                         }
+            data.append(dict_book)
+        return data
 
     def json_book(self, library_atribute: list[object]):
-        with open("books.json", "")
+        with open("json_book.json", "w") as f:
+            json.dump(self.serialize(library_atribute), f, indent=4)
 
 
 
@@ -17,10 +31,3 @@ class FileHandling:
 
 
 
-    # def book_to_json(self, library):
-    #     with open("books.json", "w") as file:
-    #       json.dump(library.list_of_books, file)
-    # def user_to_json(self, library):
-    #     with open("users.json", "w") as file:
-    #         file.write(library.list_of_users)
-        
