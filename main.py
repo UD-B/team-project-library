@@ -6,6 +6,7 @@ import file_handling
 
 
 
+
 library1 = Library()
 
 choice = None
@@ -15,7 +16,7 @@ while choice != "7":
     
     if choice  == "1":
         user_book_title = input("enter your title of book: ")
-        user_book_author = input("enter your title of book: ")
+        user_book_author = input("enter your author of book: ")
         book1 = Book(user_book_title, user_book_author)
         library1.add_book(book1)
         print(f"the book {user_book_title}, {user_book_author} added")
